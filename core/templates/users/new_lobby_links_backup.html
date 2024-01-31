@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title></title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <!-- <link rel="stylesheet" type="text/css" href="\static\css\mobile_view.css"> -->
+      <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">   
+      <style type="text/css">
+
+        body#lobbyNew  {
+          background-image: url("/static/images/background/Lobby_V11.jpg");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-color: #0E0E0E;
+          background-attachment: cover;
+          }
+
+
+          #lobby_content_sir_duke_elders_hall a
+          {
+            /*background-color: blue;*/
+          }
+
+          #lobby_content_sir_duke_elders_hall a:hover
+          {
+            /*background-color: red;*/
+
+          }
+
+
+          #lobby_content_kanski_hall a
+          {
+            /*background-color: blue;*/
+          }
+
+          #lobby_content_kanski_hall a:hover
+          {
+            /*background-color: red;*/
+          }
+
+           #lobby_content_paymen_hall a
+          {
+            /*background-color: blue;*/
+          }
+
+          #lobby_content_paymen_hall a:hover
+          {
+            /*background-color: red;*/
+          }
+
+           #lobby_content_paymen_hall a
+          {
+            /*background-color: blue;*/
+          }
+
+          #lobby_content_paymen_hall a:hover
+          {
+            /*background-color: red;*/
+          }
+
+
+            #lobby_content_parsons_hall a
+          {
+            /*background-color: blue;*/
+          }
+
+          #lobby_content_parsons_hall a:hover
+          {
+            /*background-color: red;*/
+          }
+
+
+         .msg {
+              position: absolute;
+              left: 31%;
+              /*background: #0953a3;*/
+              /*color: #0f1968;*/
+              color: #fff;
+              width: 38%;
+              top: calc(108vw * 0.40);
+              font-size: 20px;
+              padding-top: 5px;
+              padding-left:  15px;
+              font-weight: 500;
+              text-align: center;
+          }
+
+
+          .btn-primary {
+               color: #fff;
+               outline: 0;
+               border: none;
+          }
+          
+          #lobby_content_parsons_hall
+          {
+            position: absolute;
+            top:calc(77vw * 0.2);
+            left:calc(104vw * 0.50);
+            opacity: 0;
+          }
+          #lobby_content_sir_duke_elders_hall
+          {
+            position: absolute;
+            top:calc(74vw * 0.2);
+            left:calc(70vw * 0.50);
+            opacity: 0;
+          }
+          #lobby_content_kanski_hall
+          {
+            position: absolute;
+            top:calc(114vw * 0.2);
+            left:calc(23vw * 0.50);
+            opacity: 0;
+          }
+          #lobby_content_paymen_hall
+          {
+            position: absolute;
+            top:calc(112vw * 0.2);
+            left:calc(150vw * 0.50);
+            opacity: 0;
+          }
+
+          #lobby_content_program_sheet
+          {
+                position: absolute;
+                top: calc(183vw * 0.2);
+                left: calc(53vw * 0.50);
+                opacity: 0;
+          }
+
+          #lobby_content_helpdesk
+          {
+            position: absolute;
+            top:calc(188vw * 0.2);
+            left:calc(131vw * 0.50);
+            opacity: 0;
+          }
+
+          #lobby_content_logout
+          {
+            position: absolute;
+            top:calc(196vw * 0.2);
+            left:calc(188vw * 0.50);
+            opacity: 0;
+          }
+
+          /*#lobby_content .ang
+          {
+            font-size: 20px;
+            color: #726b6d;
+            text-decoration: none;
+          }*/
+
+          .btn-primary
+          {
+            background-color: transparent;
+            outline: 0;
+            border: none;
+          }
+          a:hover {
+            color: white;
+          }
+          .top
+              {
+                width: 100%;
+                height: calc(100vw * 0.165);
+                position: relative;
+              }
+
+
+.footer
+{
+  position: fixed;
+  bottom: 2%;
+  left:50%;
+  transform: translate(-50%, 0%);
+  color: #544f4f;
+}
+
+
+
+      </style>
+   </head>
+   <body id="lobbyNew">
+{% set base_user = session.get('user') %}
+  <div class="container-fluid">
+
+                <hr>
+               
+            </div>
+
+<div class="top">
+</div> 
+ <div id="lobby_content_parsons_hall">
+    <a  class="ang"  href="/session/2021-05-30/PARSONS HALL?user_id={{ encrypted_user_id }}" class="btn btn-lg btn-primary" ><h5 class="text-left" style="
+    display: inline-block;
+    width: calc(100vw * 0.13);
+    height: 10px;
+    font-size: 25px;
+">PARSONS HALL </h5></a>
+ 
+  </div>
+  <div id="lobby_content_sir_duke_elders_hall">
+    <a  class="ang"  href="/session/2021-05-30/SIR DUKE ELDER HALL?user_id={{ encrypted_user_id }}" class="btn btn-lg btn-primary"  ><h5 class="text-left" style="
+    display: inline-block;
+    width: calc(100vw * 0.13);
+    height: 10px;
+    font-size: 25px;
+">SIR DUKE ELDER HALL</h5></a>
+    </h5>
+  </div>
+  <div id="lobby_content_kanski_hall">
+     <a  class="ang"  href="/session/2021-05-30/KANSKI HALL?user_id={{ encrypted_user_id }}" class="btn btn-lg btn-primary"  ><h5 class="text-left" style="
+    display: inline-block;
+    width: calc(100vw * 0.13);
+    height: 10px;
+    font-size: 25px;
+">KANSKI HALL</h5></a>
+  </div>
+  <div id="lobby_content_paymen_hall">
+    <a  class="ang"  href="/session/2021-05-30/PEYMAN HALL?user_id={{ encrypted_user_id }}" class="btn btn-lg btn-primary"
+       ><h5 class="text-left" style="
+    display: inline-block;
+    width: calc(100vw * 0.13);
+    height: 10px;
+    font-size: 25px;
+">PEYMAN HALL</h5></a>
+    </h5>
+  </div>
+
+  <div id="lobby_content_program_sheet">
+    <a  class="ang"  href="/programsheet?user_id={{ encrypted_user_id }}" class="btn btn-lg btn-primary" ><h5 class="text-left" style="
+    display: inline-block;
+    width: calc(100vw * 0.08);
+    height: 10px;
+    font-size: 20px;
+">Program Sheet</h5></a>
+  </div>
+
+  <div id="lobby_content_helpdesk">
+    <a  class="ang"  href="/helpdesk?user_id={{ encrypted_user_id }}" class="btn btn-lg btn-primary" ><h5 class="text-left" style="
+    display: inline-block;
+    width: calc(100vw * 0.13);
+    height: 10px;
+    line-height: 10px;
+    font-size: 30px;
+">Help desk</h5></a>
+  </div>
+
+  <div id="lobby_content_logout">
+    <a  class="ang"  href="/logout" class="btn btn-lg btn-primary" ><h5 class="text-left" style="
+    display: inline-block;
+    width: calc(100vw * 0.13);
+    height: 10px;
+    font-size: 30px;
+">Exit >></h5></a>
+  </div>
+
+<!-- <div id="box">
+
+    <h5 class="text-left" >
+     <a class="ang"  href="{{url_for('sessions.Programsheet')}}" class="btn btn-lg btn-primary">
+        ↑ SCIENTIFIC PROGRAM</a>
+     </h5>
+    
+     <h5 class="text-left" ><a  class="ang" href="{{ url_for('user.HelpDesk')}}"  class="btn btn-lg btn-primary">
+        →  HELP DESK </a>
+     </h5>
+</div>   
+         -->
+  <div class="msg">
+    <p>Dear {{ dr_name }},
+  <br />
+              Your log for Medical Council Credit Point has been recorded!</p>
+  </div> 
+
+<div class="footer">
+            {{ Helper.footer_text() }}
+  </div>
+        
+
+   </body>
+
+<!-- <script src="/static/js/jquery.min.js" charset="utf-8"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  var user_id = "{{user_id}}";
+  var baseUrl = document.location.protocol+'//' + document.domain + ':' + location.port;
+  $(document).ready(function(){
+      // call_page_log()
+  });
+  
+ function call_page_log()
+  {   
+          $.ajax({
+                  type: 'POST', // <-- get method of form
+                  url: baseUrl + '/call_page_log', // <-- get action of form
+                  data: {user_id: user_id,page:"Lobby"},
+                  dataType: 'json',
+                  success: function(data){
+
+                   callback_page_log()
+
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                      //location.reload();  
+                    }                      
+          });  
+  }  
+
+   function callback_page_log()
+ {
+     setTimeout(function(){ call_page_log() }, 60000);
+ }
+
+
+   </script>
+
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5YLZ9FSNSJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5YLZ9FSNSJ');
+    </script>
+    
+</html>

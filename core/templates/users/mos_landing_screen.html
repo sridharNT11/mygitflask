@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Maharashtra Ophthalmological Society</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="static/css/register_style.css" rel="stylesheet">
+   </head>
+   <body>
+      <div class="row header">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-md-6 col-sm-12">
+                  <img src="static/images/mos2021/mos_logo.png" alt="logo" class="brand img-fluid">
+               </div>
+               <div class="col-md-6 col-sm-12">
+                  <img class="img-fluid" src="static/images/mos2021/MOS_VIRCON_2021.png" alt="logo" class="brand img-fluid float-lg-right" >
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row mt-3">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1 box p-6 form-container">
+
+                  <div class="row">
+                     <div class="col-md-12">
+                       {% for mesg in get_flashed_messages() %}
+                         <div class="alert alert-success text-center my-2" id="successMessage" style="color: green !important;">
+                           <h4 class="text-success">{{ mesg }}</h4>
+                         </div>
+                       {% endfor %}
+                    </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-12">
+
+                        <div class="card">
+                             
+                             <div class="card-body">
+                              <br/>
+                              <br/>
+                               <h3 class="card-title text-center">Welcome to <br/> MOS VIRCON 2021 <br/>
+                                the annual conference of MOS on virtual platform.
+                               </h3>
+                               <br/>
+                               {% if reg_status > 0 : %}
+                                  {% if used_count > 1 : %}
+                                   <h6 class="card-text">Your mobile number was already used for another delegate registration.  This however does not impact your registration. This is for your kind information.</h6>
+                                   {% endif %}
+                                  
+                                  <br/>
+                                  <h6 class="card-text" style="color: green;">The registration confirmation email has been sent to your registered email id - {{email}} </h6>
+                              {% endif %}
+                              <br/>
+                                <a href="{{url_for('user.Register')}}" class="btn btn-primary btn-lg btn-block text-uppercase">Click here to Register</a>
+                             </div>
+                           </div>
+                     </div>
+                  </div>
+                  
+                  
+                  
+                 
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>

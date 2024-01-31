@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Duplicate Login</title>
+    <!-- Custom fonts for this template-->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ ('static/vender_1/fontawesome-free/css/all.min.css') }}"> -->
+
+    <link rel="stylesheet" type="text/css" href="\static\css\style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ ('static/css/bootstrap.min.css') }}">
+
+
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+      
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    
+                    <div class="card-body p-0">
+                            <div class="col-lg-12 p-0 text-center" style="background-color: #fdf033;">
+                                <img src="static/images/mos_reg_banner_1.jpg" width="100%" height="auto">
+                            </div>
+                        <!-- Nested Row within Card Body -->
+                        <div class="row  d-sm-flex flex-row-reverse">
+                           
+                            <div class="col-lg-12">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Duplicate Login</h1>
+                                    </div>
+                                       {% for mesg in get_flashed_messages() %}
+                                        <div class="alert alert-danger" id="successMessage" style="color: red; text-align: center;">
+                                          <h4>{{ mesg }}</h4>
+                                        </div>
+                                          {% endfor %}
+                                        
+                                          
+                                <form  id="login_form" action="{{ url_for('user.duplicat_login_post') }}" method="POST">
+                                    <input type="hidden" name="encrypted_user_id" value="{{encrypted_user_id}}">
+                                    <input type="hidden" name="encrypted_name" value="{{encrypted_name}}">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5>Seemingly another device has logged in using the same user id and password.  Here is a little more information about that device:</h5>
+                                            {% for d in checkAnotherLoginDevice %}
+                                                <p>IP address : {{ d.ip_address }} </p>
+                                                <p>Platform : {{ d.os_name }} </p>
+                                                <p>Browser : {{ d.browser_name }} </p>
+                                                <hr />
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <input type="submit" value="Do you want to terminate the sessions on the other device  and login here?  Then, click here." name="submit" id="login_submit" class="btn btn-primary btn-user btn-block">
+
+                                            <a class="small" href="{{url_for('user.Login')}}" >Go back to login screen</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                    <hr>
+                                   
+                                    <div class="text-center">
+                                        
+                                    
+                                        
+                                    </div>
+                                    
+
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer">
+            {{ Helper.footer_text() }}
+        </div>
+
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5YLZ9FSNSJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5YLZ9FSNSJ');
+    </script>
+    <!-- <script src="/static/js/jquery.min.js" charset="utf-8"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- link for jquery validation -->
+    <!-- <script src="/static/js/jquery.validate.js" charset="utf-8"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js" charset="utf-8"></script>
+    <!-- <script src="/static/js/popper.min.js" charset="utf-8"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+        
+            $("#login_submit").click(function() {
+                validate_login_form()
+                $("#alert-success").hide()
+                $("#alert-danger").hide()
+            })
+          
+        })
+
+
+        function validate_login_form()
+         {
+         
+             errorclass : 'error',
+         
+             $("#login_form").validate({
+                
+                 rules : {
+                     email : {
+                         required : true,
+                         email : true
+                     },
+                     
+                     password : "required",
+                 },
+         
+                 messages : {
+                     password : "Please enter the Password",
+                     email : {
+                         required : "Please enter the Email id",
+                         email : "Please provide valid Email Id"
+                     },
+                     
+                 },
+                 highlight: function(element) {
+                     $(element).parent().addClass('error')
+                 },
+             
+                 unhighlight: function(element) {
+                     $(element).parent().removeClass('error')
+                 },
+         
+                 submitHandler: function(form) {
+                     form.submit();
+                 }
+             })
+                
+         }
+    </script>
+
+</body>
+
+<script type="text/javascript">window.setTimeout("document.getElementById('successMessage').style.display='none';", 20000); 
+</script>
+
+
+
+</html>

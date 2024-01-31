@@ -1,0 +1,42 @@
+.breadcrumb {
+    padding: 0px;
+	background: #f8f8f8;
+	list-style: none; 
+	overflow: hidden;
+    margin-top: 20px;
+
+}
+.breadcrumb>li+li:before {
+	padding: 0;
+}
+.breadcrumb li { 
+	float: left; 
+}
+.breadcrumb li.active a {
+	background: brown;                   /* fallback color */
+	background: #ffc107 ;
+	/*cursor: pointer; */
+}
+.breadcrumb li.completed a {
+	background: brown;                   /* fallback color */
+	background: hsla(153, 57%, 51%, 1); 
+	cursor: pointer; 
+}
+.breadcrumb li.active a:after {
+	border-left: 30px solid #ffc107 ;
+}
+.breadcrumb li.completed a:after {
+	border-left: 30px solid hsla(153, 57%, 51%, 1);
+} 
+
+.breadcrumb li a {
+	color: #999999;
+	text-decoration: none; 
+	padding: 10px 10px 10px 10px;
+	position: relative; 
+	display: block;
+	float: left;
+	cursor: not-allowed;
+}
+
+.breadcrumb li.completed a:hover  { background: #ffc107  ;}

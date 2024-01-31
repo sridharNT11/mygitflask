@@ -1,0 +1,111 @@
+<!--using html5 doctype -->
+<!doctype html>
+<!--using language attribute-->
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style type="text/css">
+         .table
+         {
+         border: 1px solid black;
+         text-align: left;
+         background-color: #FAFAFA;
+         /** #E1E1FD**/
+         color: #050441;
+         }
+         #tbod
+         {
+         padding: 10px;
+         }
+      </style>
+   </head>
+   <body >
+      <div class="container" style="width: 640px;">
+         <table class="table">
+            <thead>
+               <tr>
+                  <th >
+                     <img style="width:100%;" src="https://vircon2021.moseye.org/static/images/mos2021/mos_transactional_header.jpg" height="" >
+                  </th>
+               </tr>
+            </thead>
+            <tbody id="tbod">
+               <tr>
+                  <td>
+                     <p> 
+                        <span style = "font-size: 18px;width: 640px"> Dear {{prefix}} {{ name }},</span>
+                        <br/> 
+                        <span style = "font-size: 18px;width: 640px">
+                        Greetings from the organising committee,  of  MOS VIRCON 2021 - Maharashtra Ophthalmological Society.
+                        </span> 
+                     </p>
+                     <!--  -->
+                     <p style = "font-size: 18px;">Your registration information, for your records</p>
+                     <p style="font-size: 18px;">Name : {{prefix}} {{ name }} <br/>
+                     Mobile : {{mobile}} <br/>
+                     City   : {{city}} <br/>
+                     State  : {{state}}<br/>
+                     </p>
+                     <p style="font-size: 18px;">Medical Council Registration information for Credit Points from MMC for eligible registration number</p>
+
+                     <p style="font-size: 18px;">Medical Council number : {{mcn_number}} <br/> Medical Council State :  {{mc_state}}</p>
+                     <!--  -->
+
+                     <p style = "font-size: 18px;">
+                        Please access the conference website through the following link  <a href="https://vircon2021.moseye.org/">https://vircon2021.moseye.org/</a> 
+                        <br/>
+                        Your user id : {{ email }}
+                     </p>
+                     <p style = "font-size: 18px;">For a better experience , visit the conference website on a desktop / laptop.<br/>
+                        Once you are in the scientific hall, ensure that you unmute the video and play.
+                     </p>
+                     <p style = "font-size: 18px;">
+                     <p style = "font-size: 18px;">For any assistance, please write to support@moseye.org or talk to us  on ‭+91 63858 21300<br/>
+                        Looking forward to seeing you @ MOS VIRCON 2021.
+                     </p>
+                     <hr/>
+                     <!-- <p style = "font-size: 18px;">Organising  Committee MOS VIRCON 2021<br/></p> -->
+                     <table style="border-style: none;background-color: white;width: 100%;">
+                        <tbody>
+                           <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                           </tr>
+                       <tr style="text-align: center;background-color: white;font-size: 18px;border: none;line-height: 21px;">
+                          <td colspan="2" style="width: 33%;"><span style="color:black;">Dr.Parikshit Gogate</span>  <br/> President</td>
+                          <td colspan="2" style="width: 33%;"><span style="color: black;">Dr.Ragini Parekh</span><br/>  Chairman - Sci Comm</td>
+                          <td colspan="2" style="width: 34%;"><span style="color: black;">Dr.Shirish Thorat </span> <br/> Hon.Secretary</td>
+                        </tr>
+                        <tr>
+                           <td colspan="6"><hr/></td>
+                        </tr>
+                       
+                       <tr style="background-color: white;font-size: 18px;border: none;line-height: 21px;">
+                         
+                         <td colspan="3" style="text-align: center;width: 50%;"><span style="color: black;">Dr.Pankaj V Shah</span>  <br/> Treasurer</td>
+                         <td colspan="3" style="text-align: center;width: 50%;"><span style="color: black;">Dr.Swapnesh Sawant </span> <br/> Secretary - Scientific Committee</td>
+                       </tr>
+                    </tbody>
+                     </table>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <br/>
+      </div>
+   </body>
+   <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- plugin for jquery validation -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"> </script>
+   <!-- Popper JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <!-- Latest compiled JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</html>
